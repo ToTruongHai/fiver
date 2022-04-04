@@ -2,7 +2,7 @@ import React from "react";
 import { useSelector, useDispatch } from "react-redux";
 
 export default function ModalHOC(props) {
-  const { component, handleSubmit } = useSelector(
+  const { component, handleSubmit, titleModal } = useSelector(
     (rootReducer) => rootReducer.modalReducer
   );
   return (
@@ -16,16 +16,8 @@ export default function ModalHOC(props) {
     >
       <div className="modal-dialog" role="document">
         <div className="modal-content">
-          <div className="modal-header">
-            <h5 className="modal-title">Modal title</h5>
-            <button
-              type="button"
-              className="close"
-              data-dismiss="modal"
-              aria-label="Close"
-            >
-              <span aria-hidden="true">×</span>
-            </button>
+          <div className="modal-header border-0">
+            <h5 className="modal-title d-flex ml-auto mr-auto">{titleModal} Fiverr</h5>
           </div>
           <div className="modal-body">
             {/* gọi props thế này nếu attribute truyền vào là 1 component */}
@@ -33,7 +25,7 @@ export default function ModalHOC(props) {
 
             {component}
           </div>
-          <div className="modal-footer">
+          {/* <div className="modal-footer">
             <button
               type="button"
               className="btn btn-secondary"
@@ -48,7 +40,7 @@ export default function ModalHOC(props) {
             >
               Save
             </button>
-          </div>
+          </div> */}
         </div>
       </div>
     </div>
