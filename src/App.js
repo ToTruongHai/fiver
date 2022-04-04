@@ -1,6 +1,6 @@
 import { Router, Switch } from "react-router-dom";
 import ModalHOC from "./pages/HOC/ModalHOC";
-import Home from "./pages/home/home";
+import Home from "./pages/Home/Home";
 import { HomeTemplate } from "./templates/homeTemplate";
 import { history } from "./util/setting";
 
